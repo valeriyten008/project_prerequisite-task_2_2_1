@@ -5,10 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,13 +34,5 @@ public class Util {
         return sessionFactory;
     }
 
-    public static Connection getConnection() {
-        try {
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Error getting database connection", e);
-            throw new RuntimeException("Error connecting to the database", e);
-        }
-    }
 
 }
