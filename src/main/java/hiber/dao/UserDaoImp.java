@@ -35,3 +35,5 @@ public class UserDaoImp implements UserDao {
       return query.setMaxResults(1).getSingleResult();
    }
 }
+
+
